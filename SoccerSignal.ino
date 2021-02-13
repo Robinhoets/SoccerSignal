@@ -40,6 +40,7 @@ void setup() {
 
 void loop() {
   RGB_color();
+  buzz();
   delay(10000);
 }
 
@@ -59,21 +60,11 @@ void RGB_color(){
   analogWrite(green_light_pin_2, rgb_green_value);
   
   analogWrite(blue_light_pin_1, rgb_blue_value);
-  analogWrite(blue_light_pin_2, rgb_blue_value);
-
-  tone(buzzer, 100); // Send 1KHz sound signal...
-  delay(2000);
-  noTone(buzzer); 
+  analogWrite(blue_light_pin_2, rgb_blue_value); 
 }
 
-//void RGB_color(int red_light_value, int green_light_value, int blue_light_value)
-// {
-//  analogWrite(red_light_pin_1, red_light_value);
-//  analogWrite(red_light_pin_2, red_light_value);
-//  
-//  analogWrite(green_light_pin_1, green_light_value);
-//  analogWrite(green_light_pin_2, green_light_value);
-//  
-//  analogWrite(blue_light_pin_1, blue_light_value);
-//  analogWrite(blue_light_pin_2, blue_light_value);
-//}
+buzz(){
+  tone(buzzer, 100); // Send 1KHz sound signal...
+  delay(2000);
+  noTone(buzzer);
+}
